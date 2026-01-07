@@ -86,3 +86,7 @@ examples/
 # Test/debug scripts (keep local only)
 test_openai_connection.py
 test_queries.py
+
+# Workshop files (incomplete/draft)
+workshop/05_building_agents.ipynb
+workshop/06_capstone_comparison.ipynb

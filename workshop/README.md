@@ -30,10 +30,8 @@ This workshop follows a deliberate learning progression:
 | **2. RAG Essentials** | 60 min | `02_rag_essentials.ipynb` | ~1,000 | Vector embeddings, semantic search, HierarchicalCourseManager |
 | **3. Data Engineering** | 75 min | `03_data_engineering.ipynb` | ~960 | Data pipeline, chunking strategies, real PDF examples |
 | **4. Memory Systems** | 90 min | `04_memory_systems.ipynb` | ~2,000 | Working memory, long-term memory, memory-enhanced RAG |
-| **5. Building Agents** | 60 min | `05_building_agents.ipynb` | ~350 | LangGraph, tool calling, memory tools |
-| **6. Capstone** | 30 min | `06_capstone_comparison.ipynb` | ~300 | Stage 4 vs 6 comparison, production patterns |
 
-**Total:** ~6 hours | ~5,210 lines of comprehensive content
+**Total:** ~4.5 hours | ~4,560 lines of comprehensive content
 
 ## 🔧 Prerequisites
 
@@ -175,24 +173,6 @@ curl http://localhost:8088/v1/health
 - **Agent Memory Server**: Automatic compression and semantic extraction
 - **Hands-on**: Complete memory-enhanced course advisor
 
-### Module 5: Building Agents (60 min)
-
-**Putting It All Together**
-
-- **LangGraph Fundamentals**: Nodes, edges, state management
-- **Memory Tools**: store_memory, search_memories, search_courses
-- **Tool Calling**: LLM decides when to use tools
-- **Hands-on**: Build a complete course advisor agent
-
-### Module 6: Capstone Comparison (30 min)
-
-**Seeing the Full Impact**
-
-- **Side-by-Side**: Stage 4 (ReAct) vs Stage 6 (Full Memory)
-- **Key Metrics**: Token usage, response quality, reasoning visibility
-- **Production Patterns**: When to use what
-- **Next Steps**: Advanced topics and resources
-
 ## 🏃 Executing the Notebooks
 
 All workshop notebooks have been tested and execute successfully. To run them:
@@ -265,7 +245,6 @@ Workshop notebooks use relative paths from the `workshop/` directory:
 
 ### Documentation
 - [Redis Vector Search](https://redis.io/docs/stack/search/reference/vectors/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
 - [Agent Memory Server](https://github.com/redis/agent-memory-server)
 
 ---
