@@ -79,3 +79,6 @@ workshop_boa/
 
 # Documentation (keep local only)
 docs/
+
+# Examples (keep local only)
+examples/

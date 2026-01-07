@@ -370,7 +370,6 @@ context-eng-matters/
 │   └── section-4-tools-and-agents/
 │
 ├── tests/                        # Test suite
-├── examples/                     # Usage examples
 └── docker-compose.yml            # Redis + Agent Memory Server
 ```
 
