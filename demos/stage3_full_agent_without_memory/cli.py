@@ -30,11 +30,14 @@ if not load_dotenv(env_path):
             break
         current = current.parent
 
-# Add agent module to path
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-
-from agent import create_workflow, run_agent, setup_agent
-from agent.setup import cleanup_courses
+# Import agent module - try relative import first (when running as package),
+# fall back to direct import (when running python cli.py from this directory)
+try:
+    from .agent import create_workflow, run_agent, setup_agent
+    from .agent.setup import cleanup_courses
+except ImportError:
+    from agent import create_workflow, run_agent, setup_agent
+    from agent.setup import cleanup_courses
 
 
 class CourseQACLI:
@@ -321,5 +324,10 @@ async def main():
         await cli.interactive_mode()
 
 
-if __name__ == "__main__":
+def run():
+    """Sync entry point for uv scripts."""
     asyncio.run(main())
+
+
+if __name__ == "__main__":
+    run()

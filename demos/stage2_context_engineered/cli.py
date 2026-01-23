@@ -37,17 +37,20 @@ logging.basicConfig(
 
 logger = logging.getLogger("stage2-cli")
 
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-
 # Load environment variables from project root
 from dotenv import load_dotenv
 
-env_path = Path(__file__).parent.parent / "src" / ".env"
+env_path = Path(__file__).resolve().parents[2] / ".env"
 load_dotenv(env_path)
 
-from agent import cleanup_courses, initialize_state, setup_agent
-from agent.workflow import create_workflow
+# Import agent module - try relative import first (when running as package),
+# fall back to direct import (when running python cli.py from this directory)
+try:
+    from .agent import cleanup_courses, initialize_state, setup_agent
+    from .agent.workflow import create_workflow
+except ImportError:
+    from agent import cleanup_courses, initialize_state, setup_agent
+    from agent.workflow import create_workflow
 
 
 class ContextEngineeredCLI:
